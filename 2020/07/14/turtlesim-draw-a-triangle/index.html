@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://wangxinhui-bot.github.io">
   <title>turtlesim draw a triangle | 欣晖的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ROS 入门Turtlesim –draw a triangle创建工作区12mkdir -p ~&#x2F;catkin_clicbot&#x2F;srccatkin build #确认安装了catkin_tools  添加工作区路径 1234cd ~vim .bashrc# 在最后添加source ~&#x2F;catkin_clicbot&#x2F;devel&#x2F;setup.bash  创建程序包12c">
+  <meta name="description" content="ROS 入门Turtlesim –draw a triangle创建工作区12mkdir -p ~&#x2F;catkin_clicbot&#x2F;srccatkin build #确认安装了catkin_tools  添加工作区路径 1234cd ~vim .bashrc# 在最后添加source ~&#x2F;catkin_clicbot&#x2F;devel&#x2F;setup.bash  创建程序包12cd ~&#x2F;catkin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="turtlesim draw a triangle">
 <meta property="og:url" content="https://wangxinhui-bot.github.io/2020/07/14/turtlesim-draw-a-triangle/index.html">
 <meta property="og:site_name" content="欣晖的博客">
-<meta property="og:description" content="ROS 入门Turtlesim –draw a triangle创建工作区12mkdir -p ~&#x2F;catkin_clicbot&#x2F;srccatkin build #确认安装了catkin_tools  添加工作区路径 1234cd ~vim .bashrc# 在最后添加source ~&#x2F;catkin_clicbot&#x2F;devel&#x2F;setup.bash  创建程序包12c">
+<meta property="og:description" content="ROS 入门Turtlesim –draw a triangle创建工作区12mkdir -p ~&#x2F;catkin_clicbot&#x2F;srccatkin build #确认安装了catkin_tools  添加工作区路径 1234cd ~vim .bashrc# 在最后添加source ~&#x2F;catkin_clicbot&#x2F;devel&#x2F;setup.bash  创建程序包12cd ~&#x2F;catkin">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-14T02:02:05.000Z">
-<meta property="article:modified_time" content="2020-07-14T03:46:42.401Z">
+<meta property="article:modified_time" content="2020-07-14T05:20:19.795Z">
 <meta property="article:author" content="WangXinhui">
 <meta property="article:tag" content="ROS">
 <meta name="twitter:card" content="summary">
@@ -176,12 +176,12 @@
         <h1 id="ROS-入门Turtlesim-–draw-a-triangle"><a href="#ROS-入门Turtlesim-–draw-a-triangle" class="headerlink" title="ROS 入门Turtlesim –draw a triangle"></a>ROS 入门Turtlesim –draw a triangle</h1><h2 id="创建工作区"><a href="#创建工作区" class="headerlink" title="创建工作区"></a>创建工作区</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p ~/catkin_clicbot/src</span><br><span class="line">catkin build <span class="comment">#确认安装了catkin_tools</span></span><br></pre></td></tr></table></figure>
 
 <p>添加工作区路径</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">vim .bashrc</span><br><span class="line"># 在最后添加</span><br><span class="line">source ~&#x2F;catkin_clicbot&#x2F;devel&#x2F;setup.bash</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">vim .bashrc</span><br><span class="line"><span class="comment"># 在最后添加</span></span><br><span class="line"><span class="built_in">source</span> ~/catkin_clicbot/devel/setup.bash</span><br></pre></td></tr></table></figure>
 
 <h2 id="创建程序包"><a href="#创建程序包" class="headerlink" title="创建程序包"></a>创建程序包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~&#x2F;catkin_clicbot&#x2F;src</span><br><span class="line">catkin_create_pkg turtle_control rospy</span><br></pre></td></tr></table></figure>
 
 <p>这里我们顺便把这个包用git管理起来并链接到GitHub</p>
-<h2 id="创建一个node"><a href="#创建一个node" class="headerlink" title="创建一个node"></a>创建一个node</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim turtle_triangle.py</span><br><span class="line"><span class="comment"># copy code from my github:https://github.com/Wangxinhui-bot/TurtleControl</span></span><br><span class="line">chomd +x turtle_triangle.py</span><br><span class="line"><span class="built_in">cd</span> ~/catkin_clicbot/src</span><br><span class="line">catkin build</span><br><span class="line"><span class="built_in">source</span> ~/catkin_clicbot/devel/setup.bash</span><br></pre></td></tr></table></figure>
+<h2 id="创建一个node"><a href="#创建一个node" class="headerlink" title="创建一个node"></a>创建一个node</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim turtle_triangle.py</span><br><span class="line"><span class="comment"># copy code from my github:https://github.com/Wangxinhui-bot/TurtleControl</span></span><br><span class="line">chmod +x turtle_triangle.py</span><br><span class="line"><span class="built_in">cd</span> ~/catkin_clicbot/src</span><br><span class="line">catkin build</span><br><span class="line"><span class="built_in">source</span> ~/catkin_clicbot/devel/setup.bash</span><br></pre></td></tr></table></figure>
 
 <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">roscore</span><br><span class="line">rosrun turtlesim turtlesim_node <span class="comment">#in new terminal</span></span><br><span class="line">rosrun turtle_control turle_triangle.py <span class="comment">#in new terminal</span></span><br></pre></td></tr></table></figure>
 
